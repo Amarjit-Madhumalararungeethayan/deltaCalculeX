@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.calculex.databinding.FragmentFirstBinding
 import com.example.calculex.databinding.FragmentSecondBinding
 
@@ -25,11 +27,24 @@ class FirstFragment : Fragment() {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        checkUp()
+        //checkUp()
 
         return root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val model = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
+
+        model.message.observe(viewLifecycleOwner, Observer {
+            binding.txtF1.text = it
+        })
+    }
+    }
+
+
+/**
     private fun checkUp() {
             val countDown: CountDownTimer
             countDown = object : CountDownTimer(3500000, 10) {
@@ -52,4 +67,4 @@ class FirstFragment : Fragment() {
             }
             countDown.start()
     }
-}
+    **/
