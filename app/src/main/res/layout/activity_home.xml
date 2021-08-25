@@ -7,28 +7,6 @@
     tools:context=".Home">
 
 
-    <Button
-        android:id="@+id/f1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="frag 1"
-        app:layout_constraintEnd_toStartOf="@+id/f2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/f2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="frag 2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/f1"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <fragment
         android:name="com.example.calculex.SecondFragment"
         android:id="@+id/frag1"
@@ -40,14 +18,15 @@
         app:layout_constraintTop_toBottomOf="@+id/frag2" />
 
     <fragment
-        android:name="com.example.calculex.FirstFragment"
         android:id="@+id/frag2"
+        android:name="com.example.calculex.FirstFragment"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="72dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/f1" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"
+        tools:layout_editor_absoluteY="136dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
